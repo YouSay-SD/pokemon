@@ -1,0 +1,46 @@
+@import "../../../styles/baseline/_styles";
+
+.card {
+  background-color: $color-primary;
+  border: 2px solid $color-primary;
+  transition: $global-transition;
+  opacity: .8;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+
+    .img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.img-container {
+  background-color: $color-secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.id {
+  font-size: rem-calc(210);
+  position: absolute;
+  color: #616161;
+  font-weight: $bold;
+}
+
+.img {
+  transition: $global-transition;
+}
+
+.content {
+  padding: 13px;
+  text-align: center;
+}
+
+.title {
+  color: $white;
+}
