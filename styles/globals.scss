@@ -13,4 +13,16 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 400;
+	font-family: 'Open Sans', Calibri, Tahoma, Sans-Serif; // NOTE:: if this changes, update _typography heading classes as well
 }
