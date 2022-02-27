@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
+import Container from '../../atoms/Container/Container'
 import Searcher from '../../atoms/Searcher/Searcher'
-import Container from '../../organisms/Container/Container'
-import Grid from '../../organisms/Grid/Grid'
+import Grid from '../Grid/Grid'
 import styles from './PokeCards.module.scss'
 
 const PokeCards = () => {
