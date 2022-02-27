@@ -1,0 +1,22 @@
+@import "../../../styles/baseline/_styles";
+
+.login-form {
+  overflow: hidden;
+  height: 100vh;
+  
+  @include respond-above($bp-md) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 40px;
+  height: 100%;
+  gap: 25px;
+}
