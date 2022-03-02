@@ -5,9 +5,6 @@ import { useForm } from 'react-hook-form'
 import styles from './Form.module.scss'
 import { useState } from 'react'
 
-// eve.holt@reqres.in
-// cityslicka
-
 const Form = () => {
   const { register, formState, handleSubmit } = useForm()
   const router = useRouter()

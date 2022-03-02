@@ -15,7 +15,7 @@ const Searcher = () => {
   // Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const value = inputRef.current.value
+    const value = inputRef?.current.value
 
     if (value !== '') {
       setLoading(true)
@@ -43,7 +43,13 @@ const Searcher = () => {
 
   return (
     <div className={styles.searcher}>
-      <Title className={styles.title} size='lg'>Search your Pokemon</Title>
+      <Title
+        className={styles.title}
+        size='lg'
+        h='1'
+      >
+        Search your Pokemon
+      </Title>
 
       <Form
         className={styles.form}

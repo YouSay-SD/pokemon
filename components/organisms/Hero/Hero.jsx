@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button, Container } from 'react-bootstrap'
-import ColorType from '../../atoms/ColorType/ColorType'
+import ColorType from 'atoms/ColorType/ColorType'
 import styles from './Hero.module.scss'
 
 const Hero = ({ type }) => {

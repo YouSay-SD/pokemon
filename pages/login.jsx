@@ -1,14 +1,15 @@
 import { getSession, useSession } from 'next-auth/react'
-import FormAndGallery from 'components/organisms/FormAndGallery/FormAndGallery'
-import HeadSeo from 'components/templates/HeadSeo/HeadSeo'
-import Layout from 'components/templates/Layout/Layout'
+import FormAndGallery from 'organisms/FormAndGallery/FormAndGallery'
+import HeadSeo from 'templates/HeadSeo/HeadSeo'
+import Layout from 'templates/Layout/Layout'
+import Loader from 'atoms/Loader/Loader'
 
 const Login = () => {
   const { status } = useSession()
 
   // Loading
   if (status === 'loading') {
-    return <p>LOADING...</p>
+    return <Loader />
   }
 
   return (

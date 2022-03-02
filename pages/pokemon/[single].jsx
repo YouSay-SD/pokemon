@@ -6,6 +6,7 @@ import { setSinglePokemon } from 'actions/poke'
 import HeadSeo from 'templates/HeadSeo/HeadSeo'
 import LayoutSingle from 'templates/LayoutSingle/LayoutSingle'
 import { capitalizeFirstLetter } from 'utils/utils'
+import Loader from 'atoms/Loader/Loader'
 
 const Single = ({ data }) => {
   const { status } = useSession()
@@ -19,7 +20,7 @@ const Single = ({ data }) => {
 
   // Loading
   if (status === 'loading') {
-    return <p>LOADING...</p>
+    return <Loader />
   }
 
   return (
@@ -35,7 +36,7 @@ export default Single
 // Static Props
 export const getServerSideProps = async (context) => {
   const { params: { single } } = context
-  const { data } = await axios.get(`http://localhost:3000/api/pokemon/${single}`).then(data => data)
+  const { data } = await axios.get(`${process.env.APP_URL}/api/pokemon/${single}`).then(data => data)
 
   // Redirect to Login if you don't logged
   const session = await getSession(context)

@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Form from '../../molecules/Form/Form'
-import ImageGallery from '../../molecules/ImageGallery/ImageGallery'
+import Form from 'molecules/Form/Form'
+import ImageGallery from 'molecules/ImageGallery/ImageGallery'
 import styles from './FormAndGallery.module.scss'
 
 const FormAndGallery = () => {
