@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Avatar from 'components/atoms/Avatar/Avatar'
-import ColorType from 'components/atoms/ColorType/ColorType'
-import P from 'components/atoms/P/P'
-import Title from 'components/atoms/Title/Title'
+import Avatar from 'atoms/Avatar/Avatar'
+import ColorType from 'atoms/ColorType/ColorType'
+import P from 'atoms/P/P'
+import Title from 'atoms/Title/Title'
 import styles from './Card.module.scss'
 
 const Card = ({ id, type, name, sprites: { other } }) => {

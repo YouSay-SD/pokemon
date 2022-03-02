@@ -1,4 +1,4 @@
-import Card from '../Card/Card'
+import Card from 'molecules/Card/Card'
 import styles from './Grid.module.scss'
 
 const Grid = ({ items }) => {

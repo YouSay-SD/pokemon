@@ -4,8 +4,8 @@ import Link from 'next/link'
 import styles from './Searcher.module.scss'
 import { useRef, useState } from 'react'
 import { Button, Form, Spinner } from 'react-bootstrap'
-import Title from 'components/atoms/Title/Title'
-import P from 'components/atoms/P/P'
+import Title from 'atoms/Title/Title'
+import P from 'atoms/P/P'
 
 const Searcher = () => {
   const [searchedPokemon, setSearchedPokemon] = useState(null)

@@ -6,6 +6,13 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 
 const ImageGallery = () => {
+  const pokemons = [
+    { name: 'pikachu' },
+    { name: 'charmander' },
+    { name: 'squirtle' },
+    { name: 'bulbasaur' }
+  ]
+
   return (
     <div className={styles['image-gallery']}>
       <Swiper
@@ -22,24 +29,19 @@ const ImageGallery = () => {
         onSwiper={(swiper) => console.log(swiper)}
         modules={[Autoplay, EffectFade]}
       >
-        <SwiperSlide>
-          <Image
-            className={styles.img}
-            src='/img/background-1.jpg'
-            alt='Slide 1'
-            layout="fill"
-            objectFit="cover"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            className={styles.img}
-            src='/img/background-2.jpg'
-            alt='Slide 2'
-            layout="fill"
-            objectFit="cover"
-          />
-        </SwiperSlide>
+        {pokemons.map(({ name }) => {
+          return (
+            <SwiperSlide key={name}>
+              <Image
+                className={styles.img}
+                src={`/img/${name}.png`}
+                alt={name}
+                layout="fill"
+                objectFit="cover"
+              />
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </div>
   )
