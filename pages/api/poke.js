@@ -9,7 +9,7 @@ export default async (req, res) => {
 
   // Get All Pokemons
   const getPokemons = async () => {
-    const apiUrl = `${process.env.POKE_ENDPOINT}/pokemon/?limit=${body.page === 3 ? 4 : limitPerPage}&offset=${offset}`
+    const apiUrl = `${process.env.POKE_API}/pokemon/?limit=${body.page === 3 ? 4 : limitPerPage}&offset=${offset}`
     const allPokemons = await axios.get(apiUrl).then(({ data }) => data.results)
     const allPokemonsData = await allPokemons.map(({ url }) => getPokemonData(url))
     return Promise.all(allPokemonsData)

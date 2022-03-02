@@ -7,7 +7,7 @@ export default async (req, res) => {
 
   try {
     const getPokemon = async () => {
-      const apiUrl = `${process.env.POKE_ENDPOINT}/pokemon/${single}`
+      const apiUrl = `${process.env.POKE_API}/pokemon/${single}`
       const pokemon = await axios.get(apiUrl).then(({ data }) => data)
       const { evolution_chain } = await axios.get(pokemon.species.url).then(({ data }) => data)
       const { chain } = await axios.get(evolution_chain.url).then(({ data }) => data)
