@@ -3,6 +3,7 @@
 .form {
   width: 100%;
   max-width: 400px;
+  z-index: 1;
 
   button {
     width: 100%;
@@ -17,10 +18,10 @@
   }
 }
 
-.input {
-  width: 100%;
-  border-radius: 5px;
-  padding: 10px;
+.alert {
+  margin-top: 10px;
+  color: $color-red;
+  font-weight: $light;
 }
 
 .submit {

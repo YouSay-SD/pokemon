@@ -27,8 +27,6 @@ const ImageGallery = () => {
             className={styles.img}
             src='/img/background-1.jpg'
             alt='Slide 1'
-            width={500}
-            height={800}
             layout="fill"
             objectFit="cover"
           />
@@ -38,8 +36,6 @@ const ImageGallery = () => {
             className={styles.img}
             src='/img/background-2.jpg'
             alt='Slide 2'
-            width={500}
-            height={800}
             layout="fill"
             objectFit="cover"
           />

@@ -1,35 +1,27 @@
 @import "../../../styles/baseline/_styles";
 
 .card {
-  background-color: $color-primary;
-  border: 2px solid $color-primary;
+  background-color: $white;
   transition: $global-transition;
   opacity: .8;
   cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 10px 9px 10px -6px grey;
+  position: relative;
 
   &:hover {
-    opacity: 1;
-
-    .img {
-      transform: scale(1.1);
-    }
+    transform: scale(1.055);
   }
 }
 
 .img-container {
-  background-color: $color-secondary;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-}
-
-.id {
-  font-size: rem-calc(210);
-  position: absolute;
-  color: #616161;
-  font-weight: $bold;
+  height: 140px;
 }
 
 .img {
@@ -37,10 +29,22 @@
 }
 
 .content {
-  padding: 13px;
+  padding: 140px 20px 20px;
   text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+.id,
 .title {
-  color: $white;
+  color: $color-font;
+}
+
+.avatar {
+  bottom: 87px;
+  left: 50%;
+  transform: translateX(-50%);
 }
