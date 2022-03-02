@@ -21,3 +21,21 @@ $theme-colors: (
     color: $color-primary;
   }
 }
+
+// Btn
+.btn-link {
+  color: $color-primary;
+
+  &:hover {
+    color: $color-primary;
+    opacity: .8;
+  }
+}
+
+.btn-primary {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}

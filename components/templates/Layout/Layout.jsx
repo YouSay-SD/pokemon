@@ -1,6 +1,6 @@
 import { motion, MotionConfig } from 'framer-motion'
 import { useSession } from 'next-auth/react'
-import Logout from '../../atoms/Logout/Logout'
+import Logout from 'components/atoms/Logout/Logout'
 
 const Layout = ({ children }) => {
   const { data: isLogged } = useSession()
