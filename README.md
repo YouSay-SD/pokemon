@@ -12,11 +12,11 @@ yarn run dev
 
 ## Environment Variables
 You must create .env.local and set this variables:
-
+```bash
 POKE_API=https://pokeapi.co/api/v2
 LOGIN_API=https://reqres.in/api/login
 APP_URL=http://localhost:3000
-
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
