@@ -1,0 +1,30 @@
+@import "../../../styles/baseline/_styles";
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+
+  button {
+    width: 100%;
+  }
+}
+
+.input-container {
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 25px;
+  }
+}
+
+.alert {
+  margin-top: 10px;
+  color: $color-red;
+  font-weight: $light;
+}
+
+.submit {
+  width: 100%;
+  padding: 10px;
+}

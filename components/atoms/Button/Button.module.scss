@@ -1,0 +1,11 @@
+@import "../../../styles/baseline/_styles";
+
+.button {
+  padding: 10px;
+  font-size: rem-calc(16);
+  line-height: rem-calc(22);
+  background-color: $color-primary;
+  font-family: $font-primary;
+  color: $white !important;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+@import 'baseline/colors';
+
+$theme-colors: (
+  'primary': $color-primary,
+  'danger': $color-red,
+);
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+// Pagination
+.page-item {
+  &.active {
+    .page-link {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $white;
+    }
+  }
+
+  .page-link {
+    color: $color-primary;
+  }
+}
+
+// Btn
+.btn-link {
+  color: $color-primary;
+
+  &:hover {
+    color: $color-primary;
+    opacity: .8;
+  }
+}
+
+.btn-primary {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}

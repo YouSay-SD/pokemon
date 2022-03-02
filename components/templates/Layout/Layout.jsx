@@ -1,6 +1,10 @@
 import { motion, MotionConfig } from 'framer-motion'
+import { useSession } from 'next-auth/react'
+import Logout from 'components/atoms/Logout/Logout'
 
 const Layout = ({ children }) => {
+  const { data: isLogged } = useSession()
+
   return (
     <MotionConfig transition={{ duration: 0.7 }}>
       <motion.div
@@ -10,22 +14,23 @@ const Layout = ({ children }) => {
         variants={{
           layoutInitial: {
             opacity: 0,
-            filter: 'blur(20px)',
-            transform: 'scale(1.1)'
+            filter: 'blur(10px)',
+            transform: 'translateY(-20px)'
           },
           layoutAnimate: {
             opacity: 1,
             filter: 'blur(0px)',
-            transform: 'scale(1)'
+            transform: 'translateY(0px)'
           },
           layoutExit: {
             opacity: 0,
-            filter: 'blur(20px)',
-            transform: 'scale(0.95)'
+            filter: 'blur(10px)',
+            transform: 'translateY(-50px)'
           }
         }}
       >
         <main>
+          {isLogged && <Logout /> }
           {children}
         </main>
       </motion.div>

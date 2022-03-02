@@ -1,8 +1,8 @@
-import { types } from '../types/types'
+import { types } from 'types/types'
 
 const initState = {
   pokemons: [],
-  filteredPokemons: []
+  singlePokemon: null
 }
 
 export const pokeReducer = (state = initState, action) => {
@@ -13,10 +13,10 @@ export const pokeReducer = (state = initState, action) => {
         pokemons: action.payload
       }
 
-    case types.SET_FILTERED_POKEMONS:
+    case types.SET_SINGLE_POKEMON:
       return {
         ...state,
-        filteredPokemons: action.payload
+        singlePokemon: action.payload
       }
 
     default:

@@ -1,6 +1,6 @@
 // Constants - Font Families
-$font-family-headings: 'Open Sans', Calibri, Tahoma, Sans-Serif; // NOTE:: if this changes, update heading tags in globals.scss as well
-$font-family-body: 'Fira Sans', sans-serif; // NOTE:: if this changes, update html/body tags in globals.scss as well
+$font-primary: 'Rowdies', 'Open Sans', Calibri, Tahoma, Sans-Serif; // NOTE:: if this changes, update heading tags in globals.scss as well
+$font-family-body: 'Rowdies', sans-serif; // NOTE:: if this changes, update html/body tags in globals.scss as well
 
 // Constants - Font Weights
 $bold: 700;
@@ -19,7 +19,7 @@ $light: 300;
 .h7,
 .h8 {
 	font-weight: $bold;
-	font-family: $font-family-headings;
+	font-family: $font-primary;
 	letter-spacing: 0;
 }
 

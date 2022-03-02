@@ -1,0 +1,26 @@
+@import "../../../styles/baseline/_styles";
+
+.color-type {
+  background-color: $color-secondary;
+
+  // Types
+  &.grass {
+    background-color: #388B12;
+  }
+
+  &.fire {
+    background-color: #F1471E;
+  }
+
+  &.water {
+    background-color: #0072A0;
+  }
+
+  &.bug {
+    background-color: #816954;
+  }
+
+  &.normal {
+    background-color: #F2D68C;
+  }
+}

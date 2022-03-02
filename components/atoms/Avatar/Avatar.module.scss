@@ -1,0 +1,34 @@
+@import "../../../styles/baseline/_styles";
+
+.avatar {
+  border-radius: 50%;
+  background-color: $white;
+  border: 3px solid !important;
+
+  // Types
+  &.grass {
+    border-color: #388B12 !important;
+  }
+
+  &.fire {
+    border-color: #F1471E !important;
+  }
+
+  &.water {
+    border-color: #0072A0 !important;
+  }
+
+  &.bug {
+    border-color: #816954 !important;
+  }
+
+  &.normal {
+    border-color: #F2D68C !important;
+  }
+}
+
+.avatar-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}

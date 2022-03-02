@@ -1,18 +1,32 @@
 import axios from 'axios'
-import HeadSeo from '../../components/templates/HeadSeo/HeadSeo'
-import Layout from '../../components/templates/Layout/Layout'
-import { capitalizeFirstLetter } from '../../utils/utils'
+import { getSession, useSession } from 'next-auth/react'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { setSinglePokemon } from 'actions/poke'
+import HeadSeo from 'templates/HeadSeo/HeadSeo'
+import LayoutSingle from 'templates/LayoutSingle/LayoutSingle'
+import { capitalizeFirstLetter } from 'utils/utils'
+import Loader from 'atoms/Loader/Loader'
 
 const Single = ({ data }) => {
+  const { status } = useSession()
+  const dispatch = useDispatch()
   const name = capitalizeFirstLetter(data.name)
+
+  // Set Single Pokemon Data
+  useEffect(() => {
+    dispatch(setSinglePokemon(data))
+  }, [dispatch, data])
+
+  // Loading
+  if (status === 'loading') {
+    return <Loader />
+  }
 
   return (
     <>
       <HeadSeo title={`Pokemon | ${name}`} />
-
-      <Layout>
-        {name}
-      </Layout>
+      <LayoutSingle />
     </>
   )
 }
@@ -20,28 +34,24 @@ const Single = ({ data }) => {
 export default Single
 
 // Static Props
-export const getStaticProps = async ({ params: { single } }) => {
-  const { data } = await axios.get(`http://localhost:3000/api/pokemon/${single}`).then(data => data)
+export const getServerSideProps = async (context) => {
+  const { params: { single } } = context
+  const { data } = await axios.get(`${process.env.APP_URL}/api/pokemon/${single}`).then(data => data)
+
+  // Redirect to Login if you don't logged
+  const session = await getSession(context)
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: {
       data
     }
-  }
-}
-
-// Static Paths - Routes pre-rendering
-export const getStaticPaths = async () => {
-  const { data } = await axios.get('http://localhost:3000/api/poke').then(({ data }) => data)
-  const paths = data.map(({ name }) => {
-    return {
-      params: {
-        single: name
-      }
-    }
-  })
-
-  return {
-    paths,
-    fallback: false
   }
 }

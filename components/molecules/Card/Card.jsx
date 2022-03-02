@@ -1,25 +1,29 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import Title from '../../atoms/Title/Title'
+import Avatar from 'atoms/Avatar/Avatar'
+import ColorType from 'atoms/ColorType/ColorType'
+import P from 'atoms/P/P'
+import Title from 'atoms/Title/Title'
 import styles from './Card.module.scss'
 
-const Card = ({ id, name, sprites: { other } }) => {
+const Card = ({ id, type, name, sprites: { other } }) => {
   return (
     <article className={styles.card}>
       <Link href={`/pokemon/${name}`}>
         <a>
-          <div className={styles['img-container']}>
-            <p className={styles.id}>{id}</p>
-            <Image
-              className={styles.img}
-              src={other['official-artwork'].front_default}
-              width={280}
-              height={240}
-              alt={name}
-            />
-          </div>
+          <ColorType
+            className={`${styles['img-container']}`}
+            type={type}
+          />
+
+          <Avatar
+            className={styles.avatar}
+            src={other['official-artwork'].front_default}
+            alt={name}
+            type={type}
+          />
 
           <div className={styles.content}>
+            <P className={styles.id}>#{id}</P>
             <Title className={styles.title}>{name}</Title>
           </div>
         </a>

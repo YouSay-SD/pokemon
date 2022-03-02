@@ -1,5 +1,30 @@
 @import "../../../styles/baseline/_styles";
 
 .searcher {
-  padding: 10px;
+  position: relative;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 15px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.link {
+  position: absolute;
+  bottom: -58px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 2px 5px 11px 0px grey;
+  border-radius: 6px;
+  padding: 5px;
 }

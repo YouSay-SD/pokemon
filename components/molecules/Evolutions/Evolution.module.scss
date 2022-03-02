@@ -1,0 +1,13 @@
+@import "../../../styles/baseline/_styles";
+
+.evolution {
+  @include respond-above($bp-md) {
+    order: 1;
+  }
+}
+
+.item {
+  a {
+    display: block;
+  }
+}
