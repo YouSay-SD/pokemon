@@ -19,7 +19,7 @@ const Searcher = () => {
 
     if (value !== '') {
       setLoading(true)
-      const { data } = await axios.get(`http://localhost:3000/api/pokemon/${value}`).then((data) => {
+      const { data } = await axios.get(`${process.env.APP_URL}/api/pokemon/${value}`).then((data) => {
         setLoading(false)
         return data
       })
