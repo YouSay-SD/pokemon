@@ -11,7 +11,6 @@ export default NextAuth({
         password: { label: 'Password', type: 'password' }
       },
       async authorize (credentials, req) {
-        console.log('ENTRO')
         const payload = {
           email: credentials.email,
           password: credentials.password
@@ -25,7 +24,6 @@ export default NextAuth({
         const user = await res.json()
 
         if (res.ok && user) {
-          console.log('user', user)
           return user
         }
 

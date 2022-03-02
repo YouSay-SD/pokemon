@@ -25,8 +25,6 @@ const ImageGallery = () => {
         slidesPerView={1}
         centeredSlides={true}
         spaceBetween={0}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         modules={[Autoplay, EffectFade]}
       >
         {pokemons.map(({ name }) => {
