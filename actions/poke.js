@@ -10,12 +10,12 @@ export const setPokemons = (pokemons) => {
   }
 }
 
-// Set Filtered Pokemons
-export const setFilteredPokemons = (pokemons) => {
+// Set Single Pokemon
+export const setSinglePokemon = (pokemon) => {
   return async (dispatch) => {
     await dispatch({
-      type: types.SET_FILTERED_POKEMONS,
-      payload: pokemons
+      type: types.SET_SINGLE_POKEMON,
+      payload: pokemon
     })
   }
 }

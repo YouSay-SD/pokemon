@@ -37,15 +37,24 @@ export default NextAuth({
     signIn: '/login'
   },
   callbacks: {
-    async jwt (token, user, account, profile, isNewUser) {
-      if (user?.token) {
-        token.token = user.token
+    jwt: ({ token, user }) => {
+      if (user) {
+        token.id = user.id
       }
+
       return token
     },
+    session: ({ session, token }) => {
+      if (token) {
+        session.id = token.id
 
-    async session (session, token) {
-      return session
+        return session
+      }
     }
+  },
+  secret: 'test',
+  jwt: {
+    secret: 'test',
+    encryption: true
   }
 })
