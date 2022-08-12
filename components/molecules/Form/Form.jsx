@@ -78,7 +78,7 @@ const Form = () => {
           />
         }
 
-        {loading ? '  Loading...' : 'Search'}
+        {loading ? '  Loading...' : 'Login'}
       </Button>
 
       {errorLogin && <Alert className={styles.alert} variant='danger'>Wrong credentials</Alert>}
